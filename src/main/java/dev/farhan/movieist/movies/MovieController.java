@@ -16,8 +16,8 @@ public class MovieController {
     private MovieService service;
 
     @GetMapping
-    public ResponseEntity<List<Movie>> getMovies() {
-        return new ResponseEntity<List<Movie>>(service.findAllMovies(), HttpStatus.OK);
+    public String home() {
+        return "Netflix Backend is live"
     }
 
     @GetMapping("/{imdbId}")
