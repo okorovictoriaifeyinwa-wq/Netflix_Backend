@@ -20,7 +20,7 @@ RUN ls -la /app/target
 
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "java -jar" target/*.jar]
+ENTRYPOINT ["java", "-jar", "target/movies*.jar"]
 
 
 
