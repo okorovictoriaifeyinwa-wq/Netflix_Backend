@@ -13,14 +13,14 @@ WORKDIR /app
 COPY . .
 
 # Build the application
-RUN mvn -f /app/pom.xml clean package
-RUN ls -la /app/target
+RUN mvn clean package
 # Copy the built JAR file to the container
 
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "target/movies*.jar"]
+RUN cp target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
 
 
 
